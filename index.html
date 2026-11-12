@@ -1,0 +1,1213 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="description" content="NEDVI Constructora — Soluciones integrales de construcción, obra civil, remodelación, diseño y automatización. Construimos tus ideas, construimos contigo." />
+    <link rel="icon" type="image/png" href="assets/logo-nedvi-blanco.png" />
+    <title>NEDVI Constructora — Construimos tus ideas, construimos contigo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+    <style>
+      :root {
+        --navy: #0a1428;
+        --navy-2: #0e1d3d;
+        --blue: #1f6feb;
+        --blue-bright: #2f80ed;
+        --blue-soft: #e8f0fd;
+        --ink: #101828;
+        --ink-2: #3d4a61;
+        --ink-3: #63718c;
+        --bg: #ffffff;
+        --bg-alt: #f4f7fb;
+        --line: #dde4ee;
+        --wa: #1faa55;
+        --wa-dark: #178a44;
+        --radius: 18px;
+        --shadow: 0 18px 45px -18px rgba(10, 20, 40, .28);
+        --header-h: 88px;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --ink: #eef2f9;
+          --ink-2: #b9c4d8;
+          --ink-3: #8b99b4;
+          --bg: #0b1220;
+          --bg-alt: #101a2e;
+          --line: #22314e;
+          --blue-soft: #14294f;
+          --shadow: 0 18px 45px -18px rgba(0, 0, 0, .6);
+        }
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        *, *::before, *::after { animation: none !important; transition: none !important; }
+      }
+      body {
+        margin: 0;
+        font-family: "Manrope", system-ui, sans-serif;
+        color: var(--ink);
+        background: var(--bg);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+      img { max-width: 100%; display: block; }
+      a { color: inherit; }
+      h1, h2, h3 { font-family: "Archivo", "Manrope", sans-serif; line-height: 1.08; margin: 0; letter-spacing: -0.01em; }
+      p { margin: 0; }
+      .wrap { max-width: 1180px; margin: 0 auto; padding: 0 22px; }
+      section { padding: 92px 0; }
+      .kicker {
+        display: inline-flex; align-items: center; gap: 9px;
+        font-family: "Archivo", sans-serif; font-weight: 700; font-size: .78rem;
+        letter-spacing: .16em; text-transform: uppercase; color: var(--blue);
+        margin-bottom: 16px;
+      }
+      .kicker::before { content: ""; width: 30px; height: 3px; background: var(--blue); border-radius: 2px; }
+      .sec-title { font-size: clamp(1.9rem, 4.4vw, 2.9rem); font-weight: 800; max-width: 640px; }
+      .sec-lead { color: var(--ink-2); font-size: 1.08rem; max-width: 640px; margin-top: 14px; }
+
+      /* ---------- Header ---------- */
+      header {
+        position: fixed; inset: 0 0 auto 0; z-index: 60; height: var(--header-h);
+        display: flex; align-items: center;
+        transition: background .25s ease, box-shadow .25s ease;
+      }
+      header.scrolled { background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: blur(12px); box-shadow: 0 1px 0 var(--line); }
+      header.scrolled .nav-link, header.scrolled .brand-name { color: var(--ink); }
+      header.scrolled .burger { color: var(--ink); }
+      .header-in { display: flex; align-items: center; gap: 28px; width: 100%; }
+      .brand { display: flex; align-items: center; gap: 13px; text-decoration: none; }
+      .brand-mark { flex: none; display: grid; place-items: center; }
+      .brand-mark img { width: 58px; height: 58px; }
+      .brand-mark .logo-dark { display: none; }
+      @media (prefers-color-scheme: light) {
+        header.scrolled .brand-mark .logo-light { display: none; }
+        header.scrolled .brand-mark .logo-dark { display: block; }
+      }
+      .brand-name { font-family: "Archivo", sans-serif; font-weight: 900; font-size: 1.42rem; letter-spacing: .04em; color: #fff; line-height: 1; }
+      .brand-name small { display: block; font-size: .58rem; font-weight: 700; letter-spacing: .34em; color: #9db9e8; margin-top: 3px; }
+      header.scrolled .brand-name small { color: var(--blue); }
+      nav.main { margin-left: auto; display: flex; align-items: center; gap: 4px; }
+      .nav-link {
+        color: #dbe6f7; text-decoration: none; font-weight: 600; font-size: .95rem;
+        padding: 10px 13px; border-radius: 9px; min-height: 40px; display: inline-flex; align-items: center;
+      }
+      .nav-link:hover { background: rgba(127, 160, 220, .18); }
+      header.scrolled .nav-link:hover { background: var(--blue-soft); }
+      .btn {
+        display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+        font-family: "Archivo", sans-serif; font-weight: 700; font-size: .98rem;
+        padding: 13px 24px; min-height: 50px; border-radius: 12px; text-decoration: none;
+        border: 1.5px solid transparent; cursor: pointer; transition: transform .15s ease, background .15s ease, box-shadow .15s ease;
+      }
+      .btn svg { width: 19px; height: 19px; flex: none; }
+      .btn:active { transform: translateY(1px); }
+      .btn-wa { background: var(--wa); color: #fff; box-shadow: 0 10px 24px -10px rgba(31, 170, 85, .7); }
+      .btn-wa:hover { background: var(--wa-dark); }
+      .btn-blue { background: var(--blue); color: #fff; box-shadow: 0 10px 24px -10px rgba(31, 111, 235, .7); }
+      .btn-blue:hover { background: var(--blue-bright); }
+      .btn-ghost { background: transparent; color: #fff; border-color: rgba(255, 255, 255, .45); }
+      .btn-ghost:hover { border-color: #fff; background: rgba(255, 255, 255, .08); }
+      .btn-sm { padding: 9px 18px; min-height: 44px; font-size: .92rem; }
+      .burger {
+        display: none; margin-left: auto; background: none; border: 0; color: #fff; cursor: pointer;
+        width: 44px; height: 44px; border-radius: 10px; place-items: center;
+      }
+      .burger svg { width: 26px; height: 26px; }
+      .mobile-menu {
+        display: none; position: fixed; top: var(--header-h); left: 0; right: 0; z-index: 59;
+        background: var(--bg); border-bottom: 1px solid var(--line); padding: 12px 22px 20px;
+        box-shadow: var(--shadow);
+      }
+      .mobile-menu.open { display: block; }
+      .mobile-menu a {
+        display: flex; align-items: center; min-height: 48px; padding: 6px 4px;
+        font-weight: 700; font-size: 1.05rem; text-decoration: none; border-bottom: 1px solid var(--line);
+      }
+      .mobile-menu a:last-child { border-bottom: 0; }
+      @media (max-width: 900px) {
+        nav.main { display: none; }
+        .burger { display: grid; }
+      }
+
+      /* ---------- Hero ---------- */
+      .hero {
+        position: relative; color: #fff; padding: calc(var(--header-h) + 84px) 0 96px;
+        background: var(--navy) url("assets/fondo-hero.jpg") center / cover no-repeat;
+        overflow: hidden;
+      }
+      .hero::before {
+        content: ""; position: absolute; inset: 0;
+        background: linear-gradient(100deg, rgba(7, 15, 32, .93) 22%, rgba(7, 15, 32, .72) 55%, rgba(7, 15, 32, .38) 100%);
+      }
+      .hero-in { position: relative; max-width: 720px; }
+      .hero-badge {
+        display: inline-flex; align-items: center; gap: 8px; font-weight: 700; font-size: .85rem;
+        background: rgba(47, 128, 237, .18); border: 1px solid rgba(120, 170, 255, .45);
+        color: #cfe1ff; padding: 7px 14px; border-radius: 999px; margin-bottom: 24px;
+      }
+      .hero-badge .dot { width: 8px; height: 8px; border-radius: 50%; background: #4ade80; }
+      .hero h1 { font-size: clamp(2.5rem, 6.4vw, 4.3rem); font-weight: 900; }
+      .hero h1 .accent { color: #6ea8ff; }
+      .hero p.lead { margin-top: 22px; font-size: clamp(1.05rem, 2vw, 1.25rem); color: #d5e1f4; max-width: 580px; }
+      .hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
+      .hero-values {
+        position: relative; margin-top: 58px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+        background: rgba(255, 255, 255, .16); border: 1px solid rgba(255, 255, 255, .16); border-radius: 14px; overflow: hidden;
+        max-width: 860px;
+      }
+      .hero-values div { background: rgba(9, 20, 42, .72); padding: 16px 18px; backdrop-filter: blur(6px); }
+      .hero-values strong { font-family: "Archivo", sans-serif; display: block; font-size: .98rem; }
+      .hero-values span { font-size: .82rem; color: #a9bcdc; }
+      @media (max-width: 700px) { .hero-values { grid-template-columns: repeat(2, 1fr); } }
+
+      /* ---------- Sobre nosotros ---------- */
+      .about-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 56px; align-items: center; }
+      @media (max-width: 880px) { .about-grid { grid-template-columns: 1fr; } }
+      .about-photo { position: relative; }
+      .about-photo img { border-radius: var(--radius); box-shadow: var(--shadow); aspect-ratio: 4 / 3; object-fit: cover; width: 100%; }
+      .about-photo::after {
+        content: ""; position: absolute; inset: auto -14px -14px auto; width: 55%; height: 55%;
+        border-right: 5px solid var(--blue); border-bottom: 5px solid var(--blue); border-radius: 0 0 var(--radius) 0; z-index: -1;
+      }
+      .commit-card {
+        margin-top: 26px; background: var(--blue-soft); border-radius: 14px; padding: 20px 22px;
+        display: flex; gap: 16px; align-items: flex-start;
+      }
+      .commit-card svg { width: 30px; height: 30px; color: var(--blue); flex: none; margin-top: 2px; }
+      .commit-card strong { font-family: "Archivo", sans-serif; font-size: 1.35rem; color: var(--blue); display: block; line-height: 1.1; }
+      .values-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+      .value-chip {
+        display: inline-flex; align-items: center; gap: 8px; font-weight: 700; font-size: .92rem;
+        border: 1.5px solid var(--line); border-radius: 999px; padding: 9px 16px; min-height: 40px;
+      }
+      .value-chip svg { width: 16px; height: 16px; color: var(--blue); }
+
+      /* ---------- Servicios ---------- */
+      .services { background: var(--bg-alt); }
+      @media (prefers-color-scheme: light) {
+        .services { background: var(--bg-alt) url("assets/fondo-servicios.jpg") center / cover no-repeat; }
+        .vision { background: var(--bg-alt) url("assets/fondo-vision.jpg") center / cover no-repeat; }
+      }
+      .svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 46px; }
+      @media (max-width: 980px) { .svc-grid { grid-template-columns: repeat(2, 1fr); } }
+      @media (max-width: 620px) { .svc-grid { grid-template-columns: 1fr; } }
+      .svc {
+        background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius);
+        padding: 30px 28px; transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+      }
+      .svc:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: var(--blue); }
+      .svc-icon {
+        width: 56px; height: 56px; border-radius: 14px; background: var(--blue); color: #fff;
+        display: grid; place-items: center; margin-bottom: 20px;
+      }
+      .svc-icon svg { width: 27px; height: 27px; }
+      .svc h3 { font-size: 1.22rem; font-weight: 800; margin-bottom: 9px; }
+      .svc p { color: var(--ink-2); font-size: .98rem; }
+      .svc-num { float: right; font-family: "Archivo", sans-serif; font-weight: 900; color: var(--blue-soft); font-size: 1.6rem; line-height: 1; }
+      @media (prefers-color-scheme: dark) { .svc-num { color: #1d3560; } }
+
+      /* ---------- Ciclo integral ---------- */
+      .cycle { background: var(--navy) url("assets/fondo-ciclo-integral.jpg") center / cover no-repeat; color: #fff; position: relative; overflow: hidden; }
+      .cycle::before {
+        content: ""; position: absolute; inset: 0;
+        background: radial-gradient(700px 320px at 85% -60px, rgba(47, 128, 237, .35), transparent 65%);
+      }
+      .cycle .kicker { color: #7db1ff; }
+      .cycle .sec-lead { color: #b9cbe9; }
+      .cycle-steps { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; margin-top: 48px; }
+      @media (max-width: 900px) { .cycle-steps { grid-template-columns: repeat(2, 1fr); } }
+      @media (max-width: 520px) { .cycle-steps { grid-template-columns: 1fr; } }
+      .step { border: 1px solid rgba(140, 175, 235, .28); border-radius: var(--radius); padding: 26px 24px; background: rgba(255, 255, 255, .04); }
+      .step .n {
+        font-family: "Archivo", sans-serif; font-weight: 900; font-size: .85rem; color: #0a1428;
+        background: #6ea8ff; width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; margin-bottom: 16px;
+      }
+      .step h3 { font-size: 1.12rem; margin-bottom: 7px; }
+      .step p { color: #aebfdc; font-size: .94rem; }
+
+      /* ---------- Tipos de obra ---------- */
+      .works-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; margin-top: 46px; }
+      @media (max-width: 700px) { .works-grid { grid-template-columns: 1fr; } }
+      .work {
+        position: relative; border-radius: var(--radius); overflow: hidden; min-height: 300px;
+        display: flex; align-items: flex-end; text-decoration: none; width: 100%;
+        border: 0; padding: 0; margin: 0; background: #0a1428; cursor: pointer; text-align: left; font: inherit;
+      }
+      .work:focus-visible { outline: 3px solid var(--blue-bright); outline-offset: 3px; }
+      .work img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+      .work:hover img { transform: scale(1.05); }
+      .work::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 38%, rgba(6, 13, 28, .9)); }
+      .work figcaption { position: relative; z-index: 1; padding: 24px; color: #fff; width: 100%; }
+      .work figcaption strong { font-family: "Archivo", sans-serif; font-size: 1.3rem; display: block; }
+      .work figcaption > span { color: #c3d4ef; font-size: .95rem; display: block; }
+      .work-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 14px; }
+      .work-count {
+        display: inline-flex; align-items: center; gap: 7px; font-weight: 700; font-size: .84rem;
+        background: rgba(255, 255, 255, .14); border: 1px solid rgba(255, 255, 255, .28);
+        padding: 6px 11px; border-radius: 999px; color: #fff;
+      }
+      .work-count svg { width: 15px; height: 15px; }
+      .work-open {
+        display: inline-flex; align-items: center; gap: 7px; font-family: "Archivo", sans-serif;
+        font-weight: 700; font-size: .88rem; color: #fff;
+      }
+      .work-open svg { width: 16px; height: 16px; transition: transform .18s ease; }
+      .work:hover .work-open svg { transform: translateX(3px); }
+      .work-open { text-decoration: underline; text-underline-offset: 4px; text-decoration-color: rgba(255,255,255,.55); }
+
+      /* ---------- Galería / Lightbox ---------- */
+      .lightbox[hidden] { display: none !important; }
+      .lightbox {
+        position: fixed; inset: 0; z-index: 90; display: flex; align-items: center; justify-content: center;
+        padding: 16px;
+      }
+      .lb-backdrop { position: absolute; inset: 0; background: rgba(4, 10, 22, .9); backdrop-filter: blur(6px); }
+      .lb-panel {
+        position: relative; width: min(980px, 100%); max-height: calc(100dvh - 32px); overflow-y: auto;
+        background: #0c1930; color: #fff; border: 1px solid rgba(140, 175, 235, .3);
+        border-radius: 20px; box-shadow: 0 30px 80px -20px rgba(0,0,0,.7);
+      }
+      .lb-head {
+        display: flex; align-items: flex-start; gap: 16px; padding: 22px 22px 16px;
+      }
+      .lb-head-text { flex: 1; min-width: 0; }
+      .lb-kicker { font-size: .76rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: #7db1ff; display: block; margin-bottom: 5px; }
+      .lb-head h3 { font-size: clamp(1.35rem, 3vw, 1.8rem); }
+      .lb-head p { color: #b9cbe9; font-size: .95rem; margin-top: 5px; }
+      .lb-close {
+        flex: none; width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(255,255,255,.25);
+        background: rgba(255,255,255,.08); color: #fff; display: grid; place-items: center; cursor: pointer;
+      }
+      .lb-close:hover { background: rgba(255,255,255,.16); }
+      .lb-close svg { width: 20px; height: 20px; }
+      .lb-stage { position: relative; margin: 0 22px; border-radius: 14px; overflow: hidden; background: #060d1c; }
+      .lb-stage img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; display: block; }
+      @media (max-width: 620px) { .lb-stage img { aspect-ratio: 4 / 3; } .lb-stage { margin: 0 14px; } .lb-head { padding: 18px 14px 14px; } }
+      .lb-nav {
+        position: absolute; top: 50%; transform: translateY(-50%); width: 46px; height: 46px; border-radius: 50%;
+        border: 1px solid rgba(255,255,255,.3); background: rgba(6, 13, 28, .72); color: #fff;
+        display: grid; place-items: center; cursor: pointer; backdrop-filter: blur(4px);
+      }
+      .lb-nav:hover { background: rgba(6, 13, 28, .92); }
+      .lb-nav svg { width: 22px; height: 22px; }
+      .lb-prev { left: 12px; }
+      .lb-next { right: 12px; }
+      .lb-counter {
+        position: absolute; right: 12px; bottom: 12px; background: rgba(6, 13, 28, .78); color: #fff;
+        font-weight: 800; font-size: .84rem; padding: 6px 11px; border-radius: 999px; letter-spacing: .04em;
+      }
+      .lb-caption { padding: 14px 22px 4px; color: #d5e1f4; font-size: .96rem; min-height: 28px; }
+      @media (max-width: 620px) { .lb-caption { padding-left: 14px; padding-right: 14px; } }
+      .lb-thumbs { display: flex; flex-wrap: wrap; gap: 10px; padding: 12px 22px 6px; }
+      @media (max-width: 620px) { .lb-thumbs { padding-left: 14px; padding-right: 14px; } }
+      .lb-thumb {
+        flex: 1 1 110px; max-width: 168px; border: 2px solid transparent; border-radius: 10px; overflow: hidden;
+        padding: 0; background: none; cursor: pointer; position: relative;
+      }
+      .lb-thumb img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; }
+      .lb-thumb:hover { border-color: rgba(255,255,255,.45); }
+      .lb-thumb.active { border-color: var(--blue-bright); }
+      .lb-thumb:focus-visible { outline: 3px solid #fff; outline-offset: 2px; }
+      .lb-foot {
+        display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between;
+        padding: 16px 22px 22px;
+      }
+      @media (max-width: 620px) { .lb-foot { padding-left: 14px; padding-right: 14px; } .lb-foot .btn { flex: 1 1 100%; } }
+      .lb-hint { color: #8fa6c9; font-size: .86rem; }
+
+      /* ---------- Visión ---------- */
+      .vision { background: var(--bg-alt); }
+      .vision-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+      @media (max-width: 880px) { .vision-grid { grid-template-columns: 1fr; } }
+      .vision-points { display: grid; gap: 16px; }
+      .vpoint { display: flex; gap: 16px; background: var(--bg); border: 1px solid var(--line); border-radius: 14px; padding: 20px 22px; align-items: flex-start; }
+      .vpoint svg { width: 26px; height: 26px; color: var(--blue); flex: none; margin-top: 3px; }
+      .vpoint h3 { font-size: 1.08rem; margin-bottom: 4px; }
+      .vpoint p { color: var(--ink-2); font-size: .96rem; }
+
+      /* ---------- Por qué elegirnos ---------- */
+      .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 46px; }
+      @media (max-width: 980px) { .why-grid { grid-template-columns: repeat(2, 1fr); } }
+      @media (max-width: 620px) { .why-grid { grid-template-columns: 1fr; } }
+      .why { text-align: left; padding: 26px 24px; border-radius: var(--radius); border: 1px solid var(--line); background: var(--bg); }
+      .why svg { width: 30px; height: 30px; color: var(--blue); margin-bottom: 14px; }
+      .why h3 { font-size: 1.12rem; margin-bottom: 6px; }
+      .why p { color: var(--ink-2); font-size: .95rem; }
+
+      /* ---------- Currículum (CV) ---------- */
+      .cv { background: var(--bg-alt); }
+      .cv-grid { display: grid; grid-template-columns: 1.02fr .98fr; gap: 52px; align-items: start; margin-top: 46px; }
+      @media (max-width: 900px) { .cv-grid { grid-template-columns: 1fr; gap: 36px; } }
+      .cv-preview { display: grid; gap: 14px; }
+      .cv-cover {
+        position: relative; display: block; border-radius: var(--radius); overflow: hidden;
+        border: 1px solid var(--line); box-shadow: var(--shadow); text-decoration: none; background: #e9e9e9;
+      }
+      .cv-cover img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; transition: transform .45s ease; }
+      .cv-cover:hover img { transform: scale(1.03); }
+      .cv-cover:focus-visible { outline: 3px solid var(--blue-bright); outline-offset: 3px; }
+      .cv-badge {
+        position: absolute; left: 14px; bottom: 14px; display: inline-flex; align-items: center; gap: 8px;
+        background: rgba(6, 13, 28, .86); color: #fff; font-weight: 800; font-size: .84rem;
+        padding: 8px 13px; border-radius: 999px; backdrop-filter: blur(4px);
+      }
+      .cv-badge svg { width: 16px; height: 16px; color: #7db1ff; }
+      .cv-open {
+        position: absolute; right: 14px; bottom: 14px; width: 46px; height: 46px; border-radius: 50%;
+        background: var(--blue); color: #fff; display: grid; place-items: center;
+        box-shadow: 0 10px 22px -8px rgba(31, 111, 235, .8);
+      }
+      .cv-open svg { width: 21px; height: 21px; }
+      .cv-thumbs { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+      .cv-thumb {
+        position: relative; display: block; border-radius: 12px; overflow: hidden; text-decoration: none;
+        border: 1px solid var(--line); background: #111;
+      }
+      .cv-thumb img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; opacity: .92; transition: transform .4s ease, opacity .2s ease; }
+      .cv-thumb:hover img { transform: scale(1.04); opacity: 1; }
+      .cv-thumb:focus-visible { outline: 3px solid var(--blue-bright); outline-offset: 3px; }
+      .cv-thumb span {
+        position: absolute; left: 0; right: 0; bottom: 0; padding: 20px 12px 9px; color: #fff;
+        font-family: "Archivo", sans-serif; font-weight: 700; font-size: .84rem;
+        background: linear-gradient(180deg, transparent, rgba(6, 13, 28, .88));
+      }
+      .cv-body h3 { font-size: 1.28rem; margin-bottom: 14px; }
+      .cv-list { display: grid; gap: 13px; margin: 0; padding: 0; list-style: none; }
+      .cv-list li { display: flex; gap: 13px; align-items: flex-start; color: var(--ink-2); font-size: .99rem; }
+      .cv-list li strong { color: var(--ink); }
+      .cv-list svg { width: 21px; height: 21px; color: var(--blue); flex: none; margin-top: 2px; }
+      .cv-team { margin-top: 20px; border-top: 1px solid var(--line); padding-top: 18px; }
+      .cv-team p { font-size: .9rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 10px; }
+      .cv-team ul { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+      .cv-team li {
+        font-size: .88rem; font-weight: 700; border: 1.5px solid var(--line); border-radius: 999px;
+        padding: 7px 13px; min-height: 36px; display: inline-flex; align-items: center; background: var(--bg);
+      }
+      .cv-team li span { color: var(--ink-3); font-weight: 600; }
+      .cv-meta { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 22px; color: var(--ink-3); font-size: .9rem; font-weight: 600; }
+      .cv-meta span { display: inline-flex; align-items: center; gap: 7px; }
+      .cv-meta svg { width: 16px; height: 16px; color: var(--blue); }
+      .cv-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+      .cv-actions .btn { flex: 1 1 190px; }
+      .btn-outline { background: transparent; color: var(--blue); border-color: var(--blue); }
+      .btn-outline:hover { background: var(--blue-soft); }
+      .ic-cv { background: #334155; }
+      @media (prefers-color-scheme: dark) { .ic-cv { background: #475569; } }
+
+      /* ---------- Contacto ---------- */
+      .contact { background: var(--navy); color: #fff; position: relative; overflow: hidden; }
+      .contact::before {
+        content: ""; position: absolute; inset: 0;
+        background: radial-gradient(760px 380px at 8% -80px, rgba(47, 128, 237, .32), transparent 65%);
+      }
+      .contact-grid { position: relative; display: grid; grid-template-columns: 1fr 1.1fr; gap: 56px; }
+      @media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; } }
+      .contact .kicker { color: #7db1ff; }
+      .contact .sec-lead { color: #b9cbe9; }
+      .contact-direct { display: grid; gap: 14px; margin-top: 30px; }
+      .contact-direct a {
+        display: flex; align-items: center; gap: 15px; text-decoration: none; color: #fff;
+        border: 1px solid rgba(140, 175, 235, .3); background: rgba(255, 255, 255, .05);
+        border-radius: 14px; padding: 16px 18px; min-height: 64px; transition: background .15s ease, border-color .15s ease;
+      }
+      .contact-direct a:hover { background: rgba(255, 255, 255, .1); border-color: rgba(140, 175, 235, .6); }
+      .contact-direct .ic { width: 44px; height: 44px; flex: none; border-radius: 12px; display: grid; place-items: center; }
+      .contact-direct .ic svg { width: 22px; height: 22px; }
+      .ic-wa { background: var(--wa); }
+      .ic-mail { background: var(--blue); }
+      .contact-direct small { display: block; color: #9db4da; font-size: .82rem; font-weight: 600; }
+      .contact-direct strong { font-family: "Archivo", sans-serif; font-size: 1.05rem; }
+      form.quote { background: #fff; color: var(--ink); border-radius: 20px; padding: 30px; box-shadow: var(--shadow); }
+      @media (prefers-color-scheme: dark) { form.quote { background: #101c33; } }
+      form.quote h3 { font-size: 1.3rem; margin-bottom: 6px; }
+      form.quote > p { color: var(--ink-2); font-size: .95rem; margin-bottom: 20px; }
+      .field { margin-bottom: 15px; }
+      .field label { display: block; font-weight: 700; font-size: .88rem; margin-bottom: 6px; }
+      .field input, .field select, .field textarea {
+        width: 100%; font: inherit; font-size: 1rem; color: var(--ink);
+        background: var(--bg); border: 1.5px solid var(--line); border-radius: 11px;
+        padding: 12px 14px; min-height: 48px;
+      }
+      .field textarea { min-height: 104px; resize: vertical; }
+      .field input:focus, .field select:focus, .field textarea:focus { outline: 2px solid var(--blue); outline-offset: 1px; border-color: var(--blue); }
+      .form-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+      @media (max-width: 560px) { .form-2col { grid-template-columns: 1fr; } }
+      .form-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 6px; }
+      .form-actions .btn { flex: 1 1 200px; }
+      .form-actions .btn[disabled] { opacity: .65; cursor: wait; }
+      .form-note { font-size: .84rem; color: var(--ink-3); margin-top: 14px; text-align: center; }
+      .mail-mode-note {
+        display: none; align-items: flex-start; gap: 10px; background: var(--blue-soft);
+        border-radius: 11px; padding: 12px 14px; font-size: .92rem; font-weight: 600;
+        margin-bottom: 18px; color: var(--ink);
+      }
+      .mail-mode-note svg { width: 19px; height: 19px; color: var(--blue); flex: none; margin-top: 2px; }
+      form.quote.mail-mode .mail-mode-note { display: flex; }
+      form.quote.mail-mode #sendMail { outline: 3px solid var(--blue-bright); outline-offset: 2px; }
+      .form-status { border-radius: 11px; padding: 13px 15px; font-size: .94rem; font-weight: 600; margin-top: 16px; }
+      .form-status[hidden] { display: none; }
+      .form-status.success { background: #e5f6ec; color: #146c37; border: 1.5px solid #9ed9b4; }
+      .form-status.error { background: #fdecec; color: #8f1d1d; border: 1.5px solid #f2b1b1; }
+      .form-status.info { background: var(--blue-soft); color: var(--ink); border: 1.5px solid var(--line); }
+      .form-status a { color: inherit; text-decoration: underline; }
+      @media (prefers-color-scheme: dark) {
+        .form-status.success { background: #0f2c1c; color: #7fd79e; border-color: #1f5136; }
+        .form-status.error { background: #33151a; color: #f0a3ab; border-color: #5f2730; }
+      }
+
+      /* ---------- Footer ---------- */
+      footer { background: #060d1c; color: #93a7c9; padding: 46px 0 34px; }
+      .footer-in { display: flex; flex-wrap: wrap; gap: 26px; align-items: center; justify-content: space-between; }
+      footer .brand-name { color: #fff; }
+      footer nav { display: flex; flex-wrap: wrap; gap: 6px 20px; }
+      footer nav a { text-decoration: none; font-weight: 600; font-size: .94rem; padding: 8px 2px; min-height: 36px; display: inline-flex; align-items: center; }
+      footer nav a:hover { color: #fff; }
+      .footer-bottom { border-top: 1px solid #16263f; margin-top: 30px; padding-top: 20px; font-size: .86rem; display: flex; flex-wrap: wrap; gap: 8px 22px; justify-content: space-between; }
+
+      /* ---------- WhatsApp flotante ---------- */
+      .wa-float {
+        position: fixed; right: 18px; bottom: 18px; z-index: 70;
+        width: 60px; height: 60px; border-radius: 50%; background: var(--wa); color: #fff;
+        display: grid; place-items: center; box-shadow: 0 14px 30px -8px rgba(23, 138, 68, .65);
+        text-decoration: none;
+      }
+      .wa-float:hover { background: var(--wa-dark); }
+      .wa-float svg { width: 30px; height: 30px; }
+
+      /* El contenido siempre es visible: sin estados ocultos previos. */
+    </style>
+  </head>
+  <body>
+
+    <header id="header">
+      <div class="wrap header-in">
+        <a class="brand" href="#inicio" aria-label="NEDVI Constructora — inicio">
+          <span class="brand-mark" aria-hidden="true">
+            <img class="logo-light" src="assets/logo-nedvi-blanco.png" alt="" width="58" height="58" />
+            <img class="logo-dark" src="assets/logo-nedvi-negro.png" alt="" width="58" height="58" />
+          </span>
+          <span class="brand-name">NEDVI<small>CONSTRUCTORA</small></span>
+        </a>
+        <nav class="main" aria-label="Navegación principal">
+          <a class="nav-link" href="#nosotros">Nosotros</a>
+          <a class="nav-link" href="#servicios">Servicios</a>
+          <a class="nav-link" href="#obra">Obra</a>
+          <a class="nav-link" href="#vision">Visión</a>
+          <a class="nav-link" href="#cv">CV</a>
+          <a class="nav-link" href="#contacto">Contacto</a>
+          <a class="btn btn-wa btn-sm" style="margin-left:10px" href="https://wa.me/526645581946?text=Hola%20NEDVI%2C%20quiero%20cotizar%20un%20proyecto." target="_blank" rel="noopener">
+            <i data-lucide="message-circle"></i> Cotizar
+          </a>
+        </nav>
+        <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </header>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#nosotros">Nosotros</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#obra">Obra</a>
+      <a href="#vision">Visión</a>
+      <a href="#cv">Nuestro CV</a>
+      <a href="#contacto">Contacto</a>
+      <a href="https://wa.me/526645581946?text=Hola%20NEDVI%2C%20quiero%20cotizar%20un%20proyecto." target="_blank" rel="noopener" style="color:var(--wa-dark)">Cotizar por WhatsApp</a>
+    </div>
+
+    <main>
+      <!-- ============ HERO ============ -->
+      <section class="hero" id="inicio">
+        <div class="wrap">
+          <div class="hero-in">
+            <span class="hero-badge"><span class="dot"></span> Empresa Constructora</span>
+            <h1>Construimos tus ideas, <span class="accent">construimos contigo.</span></h1>
+            <p class="lead">Soluciones integrales de construcción, obra civil, remodelación, diseño y automatización para hacer realidad tus proyectos.</p>
+            <div class="hero-ctas">
+              <a class="btn btn-wa" href="https://wa.me/526645581946?text=Hola%20NEDVI%2C%20quiero%20cotizar%20un%20proyecto." target="_blank" rel="noopener">
+                <i data-lucide="message-circle"></i> Contactar por WhatsApp
+              </a>
+              <a class="btn btn-ghost" href="#contacto">
+                <i data-lucide="clipboard-list"></i> Llena nuestro formulario
+              </a>
+            </div>
+          </div>
+          <div class="hero-values" aria-label="Nuestros valores">
+            <div><strong>Responsabilidad</strong><span>En cada etapa de la obra</span></div>
+            <div><strong>Atención al detalle</strong><span>Acabados que se notan</span></div>
+            <div><strong>Calidad</strong><span>Materiales y procesos sólidos</span></div>
+            <div><strong>Soluciones a medida</strong><span>Adaptadas a cada cliente</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SOBRE NOSOTROS ============ -->
+      <section id="nosotros">
+        <div class="wrap about-grid">
+          <div class="reveal">
+            <span class="kicker">Sobre nosotros</span>
+            <h2 class="sec-title">Una constructora comprometida con tu proyecto, de principio a fin</h2>
+            <p class="sec-lead">En <strong>NEDVI Constructora</strong> estamos comprometidos con el desarrollo y la ejecución de proyectos de construcción. Ofrecemos soluciones profesionales adaptadas a cada cliente, trabajando con responsabilidad, calidad y atención al detalle en cada obra.</p>
+            <div class="commit-card">
+              <i data-lucide="badge-check"></i>
+              <p><strong>100% compromiso</strong> con cada obra, desde la planificación hasta la entrega.</p>
+            </div>
+            <div class="values-row">
+              <span class="value-chip"><i data-lucide="shield-check"></i> Responsabilidad</span>
+              <span class="value-chip"><i data-lucide="scan-eye"></i> Atención al detalle</span>
+              <span class="value-chip"><i data-lucide="gem"></i> Calidad</span>
+              <span class="value-chip"><i data-lucide="puzzle"></i> Soluciones a medida</span>
+            </div>
+          </div>
+          <div class="about-photo reveal">
+            <img src="assets/equipo-nedvi-obra.jpg" alt="Dos integrantes del equipo de NEDVI Constructora, con cascos de la empresa, revisando los planos de una obra" loading="lazy" />
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SERVICIOS ============ -->
+      <section class="services" id="servicios">
+        <div class="wrap">
+          <div class="reveal">
+            <span class="kicker">Servicios</span>
+            <h2 class="sec-title">Todo tu proyecto, bajo un mismo equipo</h2>
+            <p class="sec-lead">Desde el primer plano hasta la entrega final y el mantenimiento posterior: cubrimos cada etapa con control técnico y comunicación constante.</p>
+          </div>
+          <div class="svc-grid">
+            <article class="svc reveal">
+              <span class="svc-num">01</span>
+              <div class="svc-icon"><i data-lucide="building-2"></i></div>
+              <h3>Construcción</h3>
+              <p>Ejecución integral de obras residenciales y comerciales, desde la cimentación hasta la entrega final.</p>
+            </article>
+            <article class="svc reveal">
+              <span class="svc-num">02</span>
+              <div class="svc-icon"><i data-lucide="paint-roller"></i></div>
+              <h3>Remodelación</h3>
+              <p>Renovamos y adaptamos espacios existentes mejorando su funcionalidad, seguridad y estética.</p>
+            </article>
+            <article class="svc reveal">
+              <span class="svc-num">03</span>
+              <div class="svc-icon"><i data-lucide="drafting-compass"></i></div>
+              <h3>Diseño y planificación</h3>
+              <p>Planos, presupuestos y cronogramas claros antes de iniciar cualquier obra.</p>
+            </article>
+            <article class="svc reveal">
+              <span class="svc-num">04</span>
+              <div class="svc-icon"><i data-lucide="landmark"></i></div>
+              <h3>Obra civil</h3>
+              <p>Infraestructura, movimiento de tierras, pavimentos y estructuras de concreto.</p>
+            </article>
+            <article class="svc reveal">
+              <span class="svc-num">05</span>
+              <div class="svc-icon"><i data-lucide="hard-hat"></i></div>
+              <h3>Supervisión de proyectos</h3>
+              <p>Control técnico, seguimiento de avances y verificación de calidad durante toda la ejecución.</p>
+            </article>
+            <article class="svc reveal">
+              <span class="svc-num">06</span>
+              <div class="svc-icon"><i data-lucide="wrench"></i></div>
+              <h3>Mantenimiento y mejoras</h3>
+              <p>Servicios preventivos y correctivos para conservar el valor y la seguridad de tus espacios.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SOLUCIONES INTEGRALES ============ -->
+      <section class="cycle">
+        <div class="wrap">
+          <div class="reveal">
+            <span class="kicker">Soluciones integrales</span>
+            <h2 class="sec-title">Cubrimos el ciclo completo de tu proyecto</h2>
+            <p class="sec-lead">Diseño, ejecución, automatización y mantenimiento: un solo aliado para todo el ciclo de vida de tu obra.</p>
+          </div>
+          <div class="cycle-steps">
+            <div class="step reveal">
+              <span class="n">1</span>
+              <h3>Diseño</h3>
+              <p>Planos, presupuesto y cronograma definidos antes de mover la primera piedra.</p>
+            </div>
+            <div class="step reveal">
+              <span class="n">2</span>
+              <h3>Ejecución</h3>
+              <p>Construcción con supervisión constante y verificación de calidad en cada avance.</p>
+            </div>
+            <div class="step reveal">
+              <span class="n">3</span>
+              <h3>Automatización</h3>
+              <p>Soluciones de automatización que modernizan y dan valor a tus espacios.</p>
+            </div>
+            <div class="step reveal">
+              <span class="n">4</span>
+              <h3>Mantenimiento</h3>
+              <p>Cuidado preventivo y correctivo para que tu inversión conserve su valor.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ TIPOS DE OBRA ============ -->
+      <section id="obra">
+        <div class="wrap">
+          <div class="reveal">
+            <span class="kicker">Tipos de obra</span>
+            <h2 class="sec-title">¿Tienes una idea en mente?</h2>
+            <p class="sec-lead">Trabajamos proyectos residenciales, comerciales y de obra civil, además de remodelaciones de todo tipo. Toca cualquier imagen para ver más fotos del proyecto.</p>
+          </div>
+          <div class="works-grid">
+            <button type="button" class="work reveal" data-gallery="comercial" aria-haspopup="dialog" aria-label="Ver más fotos de Renderizados Profesionales">
+              <img src="assets/renderizados-portada.jpg" alt="Render de la fachada de un edificio comercial con ventanales de cristal al atardecer" loading="lazy" />
+              <figcaption>
+                <strong>Renderizados Profesionales</strong>
+                <span>Visualiza tu proyecto antes de construirlo</span>
+                <span class="work-meta">
+                  <span class="work-count"><i data-lucide="images"></i> 4 fotos</span>
+                  <span class="work-open">Ver fotos del proyecto <i data-lucide="arrow-right"></i></span>
+                </span>
+              </figcaption>
+            </button>
+            <button type="button" class="work reveal" data-gallery="industrial" aria-haspopup="dialog" aria-label="Ver más fotos del proyecto Obra civil e industrial">
+              <img src="assets/obra-civil-portada.jpg" alt="Estructura metálica de cubierta construida frente a una nave industrial" loading="lazy" />
+              <figcaption>
+                <strong>Obra civil e industrial</strong>
+                <span>Estructuras metálicas e infraestructura</span>
+                <span class="work-meta">
+                  <span class="work-count"><i data-lucide="images"></i> 8 fotos</span>
+                  <span class="work-open">Ver fotos del proyecto <i data-lucide="arrow-right"></i></span>
+                </span>
+              </figcaption>
+            </button>
+            <button type="button" class="work reveal" data-gallery="remodelacion" aria-haspopup="dialog" aria-label="Ver más fotos del proyecto Remodelación">
+              <img src="assets/remodelacion-portada.jpg" alt="Baños comerciales remodelados, con mamparas nuevas y lavabos de cubierta" loading="lazy" />
+              <figcaption>
+                <strong>Remodelación</strong>
+                <span>Renovación de interiores y exteriores</span>
+                <span class="work-meta">
+                  <span class="work-count"><i data-lucide="images"></i> 5 fotos</span>
+                  <span class="work-open">Ver fotos del proyecto <i data-lucide="arrow-right"></i></span>
+                </span>
+              </figcaption>
+            </button>
+            <button type="button" class="work reveal" data-gallery="cristal" aria-haspopup="dialog" aria-label="Ver más fotos del proyecto Creación de Oficinas">
+              <img src="assets/creacion-oficinas-portada.jpg" alt="Fachada de oficinas con ventanales y puertas de cristal dentro de una nave industrial" loading="lazy" />
+              <figcaption>
+                <strong>Creación de Oficinas</strong>
+                <span>Oficinas con divisiones y puertas de cristal</span>
+                <span class="work-meta">
+                  <span class="work-count"><i data-lucide="images"></i> 7 fotos</span>
+                  <span class="work-open">Ver fotos del proyecto <i data-lucide="arrow-right"></i></span>
+                </span>
+              </figcaption>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ VISIÓN ============ -->
+      <section class="vision" id="vision">
+        <div class="wrap vision-grid">
+          <div class="reveal">
+            <span class="kicker">Nuestra visión</span>
+            <h2 class="sec-title">Crecer junto con nuestros clientes</h2>
+            <p class="sec-lead">Buscamos ser una empresa reconocida por la calidad de nuestros proyectos, la confianza de nuestros clientes y nuestra capacidad de ofrecer soluciones innovadoras y eficientes. Queremos crecer junto con nuestros clientes, construyendo relaciones duraderas.</p>
+          </div>
+          <div class="vision-points">
+            <div class="vpoint reveal">
+              <i data-lucide="lightbulb"></i>
+              <div><h3>Soluciones innovadoras</h3><p>Métodos y tecnología actuales para resolver cada proyecto de forma eficiente.</p></div>
+            </div>
+            <div class="vpoint reveal">
+              <i data-lucide="trending-up"></i>
+              <div><h3>Crecimiento conjunto</h3><p>El éxito de tu proyecto es también el nuestro: avanzamos contigo.</p></div>
+            </div>
+            <div class="vpoint reveal">
+              <i data-lucide="heart-handshake"></i>
+              <div><h3>Relaciones duraderas</h3><p>Confianza que se construye obra tras obra, mucho más allá de la entrega.</p></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ POR QUÉ ELEGIRNOS ============ -->
+      <section id="elegirnos">
+        <div class="wrap">
+          <div class="reveal">
+            <span class="kicker">Por qué elegirnos</span>
+            <h2 class="sec-title">Razones para construir con NEDVI</h2>
+          </div>
+          <div class="why-grid">
+            <div class="why reveal"><i data-lucide="gem"></i><h3>Calidad</h3><p>Materiales y procesos que garantizan obras sólidas y duraderas.</p></div>
+            <div class="why reveal"><i data-lucide="handshake"></i><h3>Compromiso</h3><p>100% compromiso con cada obra, desde la planificación hasta la entrega.</p></div>
+            <div class="why reveal"><i data-lucide="shield-check"></i><h3>Confianza</h3><p>Comunicación clara y seguimiento constante durante todo el proyecto.</p></div>
+            <div class="why reveal"><i data-lucide="award"></i><h3>Experiencia</h3><p>Conocimiento técnico aplicado a cada etapa de la construcción.</p></div>
+            <div class="why reveal"><i data-lucide="lightbulb"></i><h3>Innovación</h3><p>Soluciones modernas, incluida la automatización de tus espacios.</p></div>
+            <div class="why reveal"><i data-lucide="user-round-check"></i><h3>Atención personalizada</h3><p>Soluciones a medida, adaptadas a lo que cada cliente necesita.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ CURRÍCULUM EMPRESARIAL (CV) ============ -->
+      <section class="cv" id="cv">
+        <div class="wrap">
+          <div class="reveal">
+            <span class="kicker">Currículum empresarial</span>
+            <h2 class="sec-title">Nuestro CV: conoce a NEDVI por dentro</h2>
+            <p class="sec-lead">Toda nuestra presentación en un solo documento: quiénes somos, cómo trabajamos, nuestros servicios, proyectos y el equipo que respalda cada obra. Ábrelo aquí mismo o descárgalo para compartirlo.</p>
+          </div>
+          <div class="cv-grid">
+            <div class="cv-preview reveal">
+              <a class="cv-cover" href="assets/NEDVI_CV_Espanol.pdf" target="_blank" rel="noopener" aria-label="Ver el currículum de NEDVI Constructora en PDF">
+                <img src="assets/cv-portada.jpg" alt="Portada del currículum de NEDVI Constructora: edificio en blanco y negro con el lema «Construye tu futuro, un proyecto a la vez»" loading="lazy" />
+                <span class="cv-badge"><i data-lucide="file-text"></i> CV NEDVI · PDF</span>
+                <span class="cv-open" aria-hidden="true"><i data-lucide="eye"></i></span>
+              </a>
+              <div class="cv-thumbs">
+                <a class="cv-thumb" href="assets/NEDVI_CV_Espanol.pdf" target="_blank" rel="noopener" aria-label="Ver la página de proyectos del currículum de NEDVI">
+                  <img src="assets/cv-proyectos.jpg" alt="Página «Nuestros proyectos» del CV: creación de oficinas y cubículos, construcción y equipamiento de baños y remodelación de área social" loading="lazy" />
+                  <span>Nuestros proyectos</span>
+                </a>
+                <a class="cv-thumb" href="assets/NEDVI_CV_Espanol.pdf" target="_blank" rel="noopener" aria-label="Ver la página del equipo del currículum de NEDVI">
+                  <img src="assets/cv-equipo.jpg" alt="Página «Equipo NEDVI» del CV con los nombres y cargos del equipo directivo y técnico" loading="lazy" />
+                  <span>Equipo NEDVI</span>
+                </a>
+              </div>
+            </div>
+            <div class="cv-body reveal">
+              <h3>Qué encontrarás en nuestro CV</h3>
+              <ul class="cv-list">
+                <li><i data-lucide="building-2"></i><p><strong>Quiénes somos</strong> y nuestro proceso de trabajo en 4 pasos: análisis y planificación, diseño y propuesta, ejecución y supervisión, y entrega y seguimiento.</p></li>
+                <li><i data-lucide="hard-hat"></i><p><strong>Nuestros servicios:</strong> construcción, diseño y planificación, supervisión de proyectos y automatización industrial.</p></li>
+                <li><i data-lucide="target"></i><p><strong>Por qué elegirnos,</strong> nuestra misión y nuestra visión: ser la constructora líder en Baja California y, después, a nivel nacional.</p></li>
+                <li><i data-lucide="folder-open"></i><p><strong>Proyectos destacados:</strong> creación de oficinas y cubículos, construcción y equipamiento de baños, y remodelación completa de área social.</p></li>
+                <li><i data-lucide="shield-check"></i><p><strong>Salud, seguridad y sostenibilidad:</strong> prevención de riesgos y construcción responsable con el entorno.</p></li>
+                <li><i data-lucide="users-round"></i><p><strong>Nuestro equipo,</strong> el respaldo detrás de cada resultado.</p></li>
+              </ul>
+              <div class="cv-team">
+                <p>Equipo NEDVI</p>
+                <ul>
+                  <li>Víctor Julio Muciño&nbsp;<span>· Gerente Comercial</span></li>
+                  <li>Nestor Ortiz&nbsp;<span>· Gerente Administrativo</span></li>
+                  <li>Edgardo Fierro&nbsp;<span>· Gerente Operativo</span></li>
+                  <li>Cristian Mendoza&nbsp;<span>· Arquitecto</span></li>
+                  <li>Pedro Garcia&nbsp;<span>· Marketing</span></li>
+                </ul>
+              </div>
+              <div class="cv-meta">
+                <span><i data-lucide="file-text"></i> PDF · 10 páginas</span>
+                <span><i data-lucide="languages"></i> Español / English</span>
+                <span><i data-lucide="calendar-check"></i> 24 · 03 · 2026</span>
+                <span><i data-lucide="hard-drive-download"></i> 7.9 MB</span>
+              </div>
+              <div class="cv-actions">
+                <a class="btn btn-blue" href="assets/NEDVI_CV_Espanol.pdf" target="_blank" rel="noopener">
+                  <i data-lucide="eye"></i> Ver nuestro CV
+                </a>
+                <a class="btn btn-outline" href="assets/NEDVI_CV_Espanol.pdf" download="NEDVI_CV_Espanol.pdf">
+                  <i data-lucide="download"></i> Descargar CV
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ CONTACTO ============ -->
+      <section class="contact" id="contacto">
+        <div class="wrap contact-grid">
+          <div class="reveal">
+            <span class="kicker">Contacto</span>
+            <h2 class="sec-title">Estamos para ayudarte</h2>
+            <p class="sec-lead">Cuéntanos qué necesitas y te responderemos a la brevedad con una propuesta a tu medida.</p>
+            <div class="contact-direct">
+              <a href="https://wa.me/526645581946?text=Hola%20NEDVI%2C%20quiero%20informaci%C3%B3n%20sobre%20un%20proyecto." target="_blank" rel="noopener">
+                <span class="ic ic-wa"><i data-lucide="message-circle"></i></span>
+                <span><small>WhatsApp</small><strong>664 558 1946</strong></span>
+              </a>
+              <a href="#contacto" id="mailCard">
+                <span class="ic ic-mail"><i data-lucide="mail"></i></span>
+                <span><small>Correo electrónico — toca para escribirnos</small><strong>nedviconstructora@gmail.com</strong></span>
+              </a>
+              <a href="assets/NEDVI_CV_Espanol.pdf" target="_blank" rel="noopener">
+                <span class="ic ic-cv"><i data-lucide="file-text"></i></span>
+                <span><small>Currículum empresarial — PDF, 10 páginas</small><strong>Ver y descargar nuestro CV</strong></span>
+              </a>
+            </div>
+          </div>
+          <form class="quote reveal" id="quoteForm">
+            <h3>Solicita tu cotización</h3>
+            <p>Llena nuestro formulario y elige cómo quieres enviarlo: por WhatsApp o por correo, directo desde aquí.</p>
+            <p class="mail-mode-note"><i data-lucide="mail"></i><span>Estás en modo correo: al pulsar «Enviar correo», tu mensaje llega directo a nedviconstructora@gmail.com, sin abrir ninguna app.</span></p>
+            <div class="form-2col">
+              <div class="field">
+                <label for="f-nombre">Nombre *</label>
+                <input id="f-nombre" name="nombre" type="text" autocomplete="name" required placeholder="Tu nombre" />
+              </div>
+              <div class="field">
+                <label for="f-tel">Teléfono</label>
+                <input id="f-tel" name="telefono" type="tel" autocomplete="tel" placeholder="664 000 0000" />
+              </div>
+            </div>
+            <div class="field">
+              <label for="f-correo">Tu correo electrónico</label>
+              <input id="f-correo" name="correo" type="email" autocomplete="email" placeholder="tucorreo@ejemplo.com" />
+            </div>
+            <div class="field">
+              <label for="f-tipo">Tipo de proyecto</label>
+              <select id="f-tipo" name="tipo">
+                <option>Construcción residencial</option>
+                <option>Construcción comercial</option>
+                <option>Remodelación</option>
+                <option>Obra civil</option>
+                <option>Diseño y planificación</option>
+                <option>Supervisión de proyecto</option>
+                <option>Mantenimiento y mejoras</option>
+                <option>Otro</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="f-msg">¿Qué necesitas? *</label>
+              <textarea id="f-msg" name="mensaje" required placeholder="Cuéntanos tu idea: qué quieres construir o remodelar, dónde y para cuándo…"></textarea>
+            </div>
+            <div class="form-actions">
+              <button type="button" class="btn btn-wa" id="sendWa"><i data-lucide="message-circle"></i> <span>Enviar por WhatsApp</span></button>
+              <button type="submit" class="btn btn-blue" id="sendMail"><i data-lucide="mail"></i> <span>Enviar correo</span></button>
+            </div>
+            <div class="form-status" id="formStatus" role="status" aria-live="polite" hidden></div>
+            <p class="form-note">Sin registro y sin compromiso. Por correo, el mensaje se envía desde esta página y llega directo a nuestro Gmail.</p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap">
+        <div class="footer-in">
+          <a class="brand" href="#inicio" aria-label="NEDVI Constructora">
+            <span class="brand-mark" aria-hidden="true">
+              <img src="assets/logo-nedvi-blanco.png" alt="" width="58" height="58" />
+            </span>
+            <span class="brand-name">NEDVI<small>CONSTRUCTORA</small></span>
+          </a>
+          <nav aria-label="Pie de página">
+            <a href="#nosotros">Nosotros</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#obra">Obra</a>
+            <a href="#vision">Visión</a>
+            <a href="#cv">Nuestro CV</a>
+            <a href="#contacto">Contacto</a>
+          </nav>
+        </div>
+        <div class="footer-bottom">
+          <span>© <span id="year">2026</span> NEDVI Constructora. Todos los derechos reservados.</span>
+          <span>Construimos tus ideas, construimos contigo.</span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ============ GALERÍA DE PROYECTO ============ -->
+    <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-labelledby="lbTitle">
+      <div class="lb-backdrop" id="lbBackdrop"></div>
+      <div class="lb-panel">
+        <div class="lb-head">
+          <div class="lb-head-text">
+            <span class="lb-kicker">Galería del proyecto</span>
+            <h3 id="lbTitle">Renderizados Profesionales</h3>
+            <p id="lbDesc">Visualiza tu proyecto antes de construirlo</p>
+          </div>
+          <button type="button" class="lb-close" id="lbClose" aria-label="Cerrar galería">
+            <i data-lucide="x"></i>
+          </button>
+        </div>
+        <div class="lb-stage">
+          <img id="lbImg" src="assets/renderizados-portada.jpg" alt="" />
+          <button type="button" class="lb-nav lb-prev" id="lbPrev" aria-label="Foto anterior"><i data-lucide="chevron-left"></i></button>
+          <button type="button" class="lb-nav lb-next" id="lbNext" aria-label="Foto siguiente"><i data-lucide="chevron-right"></i></button>
+          <span class="lb-counter" id="lbCounter">1 / 4</span>
+        </div>
+        <p class="lb-caption" id="lbCaption"></p>
+        <div class="lb-thumbs" id="lbThumbs" aria-label="Miniaturas de la galería"></div>
+        <div class="lb-foot">
+          <span class="lb-hint">Usa las flechas o toca una miniatura para cambiar de foto.</span>
+          <a class="btn btn-wa btn-sm" id="lbQuote" href="https://wa.me/526645581946?text=Hola%20NEDVI%2C%20quiero%20cotizar%20un%20proyecto." target="_blank" rel="noopener">
+            <i data-lucide="message-circle"></i> Cotizar un proyecto así
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <a class="wa-float" href="https://wa.me/526645581946?text=Hola%20NEDVI%2C%20quiero%20cotizar%20un%20proyecto." target="_blank" rel="noopener" aria-label="Contactar a NEDVI por WhatsApp">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+    </a>
+
+    <script>
+      // Iconos Lucide
+      if (window.lucide) { lucide.createIcons(); }
+
+      // Año actual
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Encabezado con fondo al hacer scroll
+      var header = document.getElementById('header');
+      function onScroll() { header.classList.toggle('scrolled', window.scrollY > 40); }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      // Menú móvil
+      var burger = document.getElementById('burger');
+      var mobileMenu = document.getElementById('mobileMenu');
+      burger.addEventListener('click', function () {
+        var open = mobileMenu.classList.toggle('open');
+        burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      mobileMenu.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () {
+          mobileMenu.classList.remove('open');
+          burger.setAttribute('aria-expanded', 'false');
+        });
+      });
+
+      // Galería: al dar clic a una imagen de "¿Tienes una idea en mente?" se ven más fotos del proyecto
+      var galleries = {
+        comercial: {
+          title: 'Renderizados Profesionales',
+          desc: 'Visualiza tu proyecto antes de construirlo',
+          quote: 'Hola NEDVI, quiero cotizar renderizados profesionales para mi proyecto.',
+          photos: [
+            { src: 'assets/renderizados-portada.jpg', alt: 'Render de la fachada exterior de un edificio comercial con ventanales de cristal y escalinatas al atardecer', caption: 'Fachada exterior renderizada del edificio al atardecer.' },
+            { src: 'assets/recepcion-render-vista-mar.jpg', alt: 'Render de un interior con ventanales de piso a techo, mesas auxiliares y vista al mar al atardecer', caption: 'Interior renderizado: ventanales de piso a techo con vista al atardecer.' },
+            { src: 'assets/interior-render-ventanales.jpg', alt: 'Render de una sala amplia con pantalla, columna de madera y ventanales panorámicos al atardecer', caption: 'Sala renderizada con pantalla y ventanales panorámicos.' },
+            { src: 'assets/sala-render-pantalla.jpg', alt: 'Render de una recepción con mostrador de madera y cristal, sala de espera y ventanales al atardecer', caption: 'Recepción renderizada: mostrador de madera y cristal con sala de espera.' }
+          ]
+        },
+        industrial: {
+          title: 'Obra civil e industrial',
+          desc: 'Estructuras metálicas e infraestructura',
+          quote: 'Hola NEDVI, quiero cotizar un proyecto de obra civil e industrial.',
+          photos: [
+            { src: 'assets/obra-civil-portada.jpg', alt: 'Estructura metálica de cubierta construida frente a una nave industrial', caption: 'Estructura metálica de cubierta frente a la nave.' },
+            { src: 'assets/estructura-metalica-de-cubierta-frente-a-la-nave.jpg', alt: 'Vista aérea de la estructura metálica de cubierta sobre su losa de concreto, frente a la nave industrial', caption: 'Vista aérea: estructura recién montada sobre su losa de concreto.' },
+            { src: 'assets/vista-aerea-estructura-losa.jpg', alt: 'Vista aérea cenital de la cubierta metálica, con los andenes de carga de la nave al fondo', caption: 'Vista cenital de la cubierta y el patio de maniobras.' },
+            { src: 'assets/vista-cenital-de-la-cubierta-y-el-patio-de-maniobras.jpg', alt: 'Estructura metálica de noche con la malla ciclónica blanca ya instalada y un trabajador sobre una escalera', caption: 'Trabajo nocturno: instalación de la malla ciclónica con cinta de privacidad.' },
+            { src: 'assets/trabajo-nocturno-malla-ciclonica.jpg', alt: 'Interior de la cubierta metálica con piso de concreto y malla ciclónica con privacidad', caption: 'Interior de la cubierta: piso de concreto y cercado perimetral terminado.' },
+            { src: 'assets/interior-cubierta-piso-concreto.jpg', alt: 'Detalle del portón corredizo y la malla ciclónica con tiras blancas de privacidad', caption: 'Detalle del portón y la malla con tiras de privacidad blancas.' },
+            { src: 'assets/detalle-porton-malla-privacidad.jpg', alt: 'Estructura metálica al atardecer con el cercado de malla ciclónica en instalación', caption: 'Avance al atardecer: montaje del cercado perimetral.' },
+            { src: 'assets/avance-al-atardecer-montaje-del-cercado-perimetral.jpg', alt: 'Vista frontal de la estructura terminada con cercado blanco, junto a un tractocamión frente a la nave', caption: 'Obra terminada: cubierta y cercado listos junto a la nave.' }
+          ]
+        },
+        remodelacion: {
+          title: 'Remodelación',
+          desc: 'Renovación de interiores y exteriores',
+          quote: 'Hola NEDVI, quiero cotizar una remodelación.',
+          photos: [
+            { src: 'assets/remodelacion-portada.jpg', alt: 'Baños comerciales remodelados, con mamparas nuevas y lavabos de cubierta', caption: 'Baños comerciales remodelados, con mamparas y lavabos nuevos.' },
+            { src: 'assets/banos-remodelados.jpg', alt: 'Lavabos de cubierta blanca corrida con espejo amplio y mamparas al fondo', caption: 'Cubierta corrida de lavabos con espejo de pared a pared.' },
+            { src: 'assets/cubierta-lavabos-espejo.jpg', alt: 'Vista general del baño remodelado desde la puerta, con mamparas y piso tipo mármol', caption: 'Vista general: mamparas nuevas y piso con acabado tipo mármol.' },
+            { src: 'assets/vista-general-banos.jpg', alt: 'Vista diagonal de la cubierta de lavabos con espejo y recubrimiento beige', caption: 'Detalle de la cubierta y los lavabos desde otro ángulo.' },
+            { src: 'assets/detalle-cubierta-lavabos.jpg', alt: 'Vista lateral de la barra de cuatro lavabos con espejo continuo e iluminación empotrada', caption: 'Barra de lavabos con espejo continuo e iluminación empotrada.' }
+          ]
+        },
+        cristal: {
+          title: 'Creación de Oficinas',
+          desc: 'Oficinas con divisiones y puertas de cristal',
+          quote: 'Hola NEDVI, quiero cotizar la creación de oficinas.',
+          photos: [
+            { src: 'assets/creacion-oficinas-portada.jpg', alt: 'Fachada de oficinas con ventanales y puertas de cristal vistas desde el área común de la nave', caption: 'Fachada de las oficinas: ventanales y puertas de cristal con marco negro.' },
+            { src: 'assets/fachada-oficinas-cristal.jpg', alt: 'División interior de cristal con marcos negros y puertas corredizas', caption: 'División de cristal de piso a techo con puertas corredizas.' },
+            { src: 'assets/division-cristal-corrediza.jpg', alt: 'Área abierta de trabajo con estaciones, sillas ergonómicas e iluminación de plafón', caption: 'Área abierta de trabajo con estaciones listas para operar.' },
+            { src: 'assets/area-abierta-trabajo.jpg', alt: 'Oficina privada con cancelería de cristal esmerilado y puerta de madera', caption: 'Oficina privada con cristal esmerilado para mayor privacidad.' },
+            { src: 'assets/oficina-privada-cristal-esmerilado.jpg', alt: 'Vista lateral del bloque de oficinas con ventanas y puertas de cristal dentro de la nave industrial', caption: 'Bloque de oficinas construido dentro de la nave industrial.' },
+            { src: 'assets/bloque-oficinas-nave.jpg', alt: 'Vista general del bloque completo de oficinas desde el piso de la nave', caption: 'Vista general: oficinas terminadas de planta baja dentro de la nave.' },
+            { src: 'assets/oficinas-terminadas-planta-baja.jpg', alt: 'Sala de juntas con mesa, sillas de colores y ventanal hacia la nave', caption: 'Sala de juntas con ventanal hacia el área de producción.' }
+          ]
+        }
+      };
+      var lightbox = document.getElementById('lightbox');
+      var lbImg = document.getElementById('lbImg');
+      var lbTitle = document.getElementById('lbTitle');
+      var lbDesc = document.getElementById('lbDesc');
+      var lbCaption = document.getElementById('lbCaption');
+      var lbCounter = document.getElementById('lbCounter');
+      var lbThumbs = document.getElementById('lbThumbs');
+      var lbQuote = document.getElementById('lbQuote');
+      var lbCloseBtn = document.getElementById('lbClose');
+      var currentGallery = null;
+      var currentIndex = 0;
+      var lastFocused = null;
+
+      function renderLbPhoto() {
+        if (!currentGallery) return;
+        var photo = currentGallery.photos[currentIndex];
+        lbImg.src = photo.src;
+        lbImg.alt = photo.alt;
+        lbCaption.textContent = photo.caption;
+        lbCounter.textContent = (currentIndex + 1) + ' / ' + currentGallery.photos.length;
+        var thumbs = lbThumbs.querySelectorAll('.lb-thumb');
+        thumbs.forEach(function (t, i) {
+          t.classList.toggle('active', i === currentIndex);
+          t.setAttribute('aria-current', i === currentIndex ? 'true' : 'false');
+        });
+      }
+      function buildThumbs() {
+        lbThumbs.innerHTML = '';
+        currentGallery.photos.forEach(function (photo, i) {
+          var b = document.createElement('button');
+          b.type = 'button';
+          b.className = 'lb-thumb' + (i === currentIndex ? ' active' : '');
+          b.setAttribute('aria-label', 'Ver foto ' + (i + 1) + ': ' + photo.caption);
+          var im = document.createElement('img');
+          im.src = photo.src;
+          im.alt = '';
+          im.loading = 'lazy';
+          b.appendChild(im);
+          b.addEventListener('click', function () { currentIndex = i; renderLbPhoto(); });
+          lbThumbs.appendChild(b);
+        });
+      }
+      function openGallery(id, trigger) {
+        var g = galleries[id];
+        if (!g) return;
+        currentGallery = g;
+        currentIndex = 0;
+        lastFocused = trigger || document.activeElement;
+        lbTitle.textContent = g.title;
+        lbDesc.textContent = g.desc;
+        lbQuote.href = 'https://wa.me/526645581946?text=' + encodeURIComponent(g.quote);
+        buildThumbs();
+        renderLbPhoto();
+        lightbox.hidden = false;
+        document.body.style.overflow = 'hidden';
+        lbCloseBtn.focus();
+      }
+      function closeGallery() {
+        lightbox.hidden = true;
+        document.body.style.overflow = '';
+        if (lastFocused && lastFocused.focus) { lastFocused.focus(); }
+      }
+      function stepPhoto(dir) {
+        if (!currentGallery) return;
+        currentIndex = (currentIndex + dir + currentGallery.photos.length) % currentGallery.photos.length;
+        renderLbPhoto();
+      }
+      document.querySelectorAll('[data-gallery]').forEach(function (el) {
+        el.addEventListener('click', function () { openGallery(el.getAttribute('data-gallery'), el); });
+      });
+      document.getElementById('lbPrev').addEventListener('click', function () { stepPhoto(-1); });
+      document.getElementById('lbNext').addEventListener('click', function () { stepPhoto(1); });
+      lbCloseBtn.addEventListener('click', closeGallery);
+      document.getElementById('lbBackdrop').addEventListener('click', closeGallery);
+      document.addEventListener('keydown', function (ev) {
+        if (lightbox.hidden) return;
+        if (ev.key === 'Escape') { closeGallery(); }
+        else if (ev.key === 'ArrowLeft') { stepPhoto(-1); }
+        else if (ev.key === 'ArrowRight') { stepPhoto(1); }
+      });
+      // Deslizar para cambiar de foto en móvil
+      var touchX = null;
+      lbImg.addEventListener('touchstart', function (ev) { touchX = ev.changedTouches[0].clientX; }, { passive: true });
+      lbImg.addEventListener('touchend', function (ev) {
+        if (touchX === null) return;
+        var dx = ev.changedTouches[0].clientX - touchX;
+        if (Math.abs(dx) > 48) { stepPhoto(dx < 0 ? 1 : -1); }
+        touchX = null;
+      }, { passive: true });
+
+      // Formulario: arma el mensaje y lo envía por WhatsApp o por correo directo
+      var quoteForm = document.getElementById('quoteForm');
+      var formStatus = document.getElementById('formStatus');
+      function showStatus(kind, html) {
+        formStatus.className = 'form-status ' + kind;
+        formStatus.innerHTML = html;
+        formStatus.hidden = false;
+      }
+      function readFields() {
+        var nombre = document.getElementById('f-nombre').value.trim();
+        var tel = document.getElementById('f-tel').value.trim();
+        var correo = document.getElementById('f-correo').value.trim();
+        var tipo = document.getElementById('f-tipo').value;
+        var msg = document.getElementById('f-msg').value.trim();
+        if (!nombre || !msg) {
+          quoteForm.reportValidity();
+          return null;
+        }
+        return { nombre: nombre, tel: tel, correo: correo, tipo: tipo, msg: msg };
+      }
+      function messageText(d) {
+        var lines = [
+          'Hola NEDVI Constructora, quiero cotizar un proyecto.',
+          '',
+          'Nombre: ' + d.nombre,
+          d.tel ? 'Teléfono: ' + d.tel : null,
+          d.correo ? 'Correo: ' + d.correo : null,
+          'Tipo de proyecto: ' + d.tipo,
+          '',
+          d.msg
+        ].filter(Boolean);
+        return lines.join('\n');
+      }
+      document.getElementById('sendWa').addEventListener('click', function () {
+        var d = readFields();
+        if (!d) return;
+        window.open('https://wa.me/526645581946?text=' + encodeURIComponent(messageText(d)), '_blank', 'noopener');
+      });
+
+      // Envío por correo directo a nedviconstructora@gmail.com (FormSubmit)
+      quoteForm.addEventListener('submit', function (ev) {
+        ev.preventDefault();
+        var d = readFields();
+        if (!d) return;
+        var btn = document.getElementById('sendMail');
+        var label = btn.querySelector('span');
+        btn.disabled = true;
+        label.textContent = 'Enviando…';
+        showStatus('info', 'Enviando tu mensaje…');
+        var payload = {
+          name: d.nombre,
+          telefono: d.tel || 'No proporcionado',
+          email: d.correo || 'No proporcionado',
+          'Tipo de proyecto': d.tipo,
+          message: d.msg,
+          _subject: 'Cotización de proyecto — NEDVI Constructora (desde la web)',
+          _template: 'table',
+          _captcha: 'false'
+        };
+        if (d.correo) { payload._replyto = d.correo; }
+        fetch('https://formsubmit.co/ajax/nedviconstructora@gmail.com', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(payload)
+        }).then(function (res) {
+          return res.json().catch(function () { return {}; }).then(function (data) {
+            btn.disabled = false;
+            label.textContent = 'Enviar correo';
+            if (res.ok && String(data.success) === 'true') {
+              quoteForm.reset();
+              quoteForm.classList.remove('mail-mode');
+              showStatus('success', '¡Mensaje enviado! Gracias, ' + d.nombre.split(' ')[0] + '. Tu cotización llegó a nuestro correo y te responderemos a la brevedad.');
+            } else {
+              showStatus('error', 'No se pudo enviar desde la página. Puedes intentarlo de nuevo o escribirnos directo a <a href="mailto:nedviconstructora@gmail.com">nedviconstructora@gmail.com</a>.');
+            }
+          });
+        }).catch(function () {
+          btn.disabled = false;
+          label.textContent = 'Enviar correo';
+          showStatus('error', 'No se pudo enviar desde la página. Puedes intentarlo de nuevo o escribirnos directo a <a href="mailto:nedviconstructora@gmail.com">nedviconstructora@gmail.com</a>.');
+        });
+      });
+
+      // La tarjeta de correo lleva al formulario ya puesto en modo correo
+      document.getElementById('mailCard').addEventListener('click', function (ev) {
+        ev.preventDefault();
+        quoteForm.classList.add('mail-mode');
+        quoteForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        window.setTimeout(function () { document.getElementById('f-nombre').focus({ preventScroll: true }); }, 450);
+      });
+    </script>
+  </body>
+</html>
